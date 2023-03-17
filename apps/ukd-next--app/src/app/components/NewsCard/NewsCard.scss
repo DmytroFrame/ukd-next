@@ -1,0 +1,26 @@
+.newscard-container {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 17px;
+    border-radius: 8px;
+    background-color: #A61B34;
+    color: white;
+
+}
+.newscard-title {
+    font-size: 14px;
+}
+
+.newscard-text {
+    font-size: 12px;
+}
+
+.newscard-image {
+    img {
+        border-radius: 7px;
+        max-width: 100%;
+        height: auto; 
+    }
+}
