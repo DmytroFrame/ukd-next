@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, redirect } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import NewsScreen from './screens/NewsScreen/NewsScreen';
 import ProfileScreen from './screens/ProfileScreen/ProfileScreen';

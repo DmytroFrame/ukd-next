@@ -1,5 +1,5 @@
 export enum ScreenPaths {
-    Schedule = "/schedule",
-    News = "/news",
-    Profile = "/profile"
+    Schedule = "/app/schedule",
+    News = "/app/news",
+    Profile = "/app/profile"
 }
