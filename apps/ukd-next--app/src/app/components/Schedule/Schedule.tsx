@@ -15,6 +15,10 @@ export default function Schedule() {
       <LessonSchedule />
       <LessonBreak />
       <LessonSchedule />
+      <LessonBreak />
+      <LessonSchedule />
+      <LessonBreak />
+      <LessonSchedule />
     </div>
   );
 }
