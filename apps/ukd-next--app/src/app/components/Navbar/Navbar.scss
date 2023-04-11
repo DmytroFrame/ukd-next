@@ -8,6 +8,10 @@
   justify-content: space-around;
   align-items: center;
   box-shadow: 0px -1px 10px 0px #0000001a;
+
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
 }
 
 .navbar_icon_base {
@@ -32,4 +36,8 @@
   height: 80px;
   width: 80px;
   background-color: #a61b34;
+
+  //   &:active {
+  //     background-color: #d73251;
+  //   }
 }

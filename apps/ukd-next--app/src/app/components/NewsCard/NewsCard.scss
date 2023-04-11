@@ -1,26 +1,26 @@
 .newscard-container {
-    background-color: aqua;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
-    padding: 17px;
-    border-radius: 8px;
-    background-color: #A61B34;
-    color: white;
-
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  padding: 17px;
+  border-radius: 8px;
+  background-color: #a61b34;
+  color: white;
 }
 .newscard-title {
-    font-size: 15px;
+  font-size: 17px;
+  font-weight: bold;
 }
 
 .newscard-description {
-    font-size: 12px;
+  font-size: 15px;
 }
 
 .newscard-image {
-    img {
-        border-radius: 7px;
-        max-width: 100%;
-        height: auto; 
-    }
+  img {
+    border-radius: 7px;
+    max-width: 100%;
+    height: auto;
+  }
 }

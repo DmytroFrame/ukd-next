@@ -14,12 +14,12 @@ export default function Navbar() {
 
   return (
     <div className="navbar_container">
-      <Link to={ScreenPaths.News} style={{textDecoration: 'none'}}>
+      <Link to={ScreenPaths.News}>
         <div className={getIconClassName(ScreenPaths.News)}>
           <img src="/app/icons/news-icon.svg" alt="" />
         </div>
       </Link>
-      
+
       <Link to={ScreenPaths.Schedule}>
         <div className={getIconClassName(ScreenPaths.Schedule)}>
           <img src="/app/icons/schedule-icon.svg" alt="" />
