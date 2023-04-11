@@ -1,13 +1,7 @@
 import { Module } from '@nestjs/common';
-import { UserModule } from './user/user.module';
-import { GroupModule } from './group/group.module';
-import { LessonModule } from './lesson/lesson.module';
-import { ScheduleModule } from './schedule/schedule.module';
-import { DepartmentModule } from './department/department.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { NewsModule } from './news/news.module';
 import { AuthModule } from './auth/auth.module';
-import { ClassroomModule } from './classroom/classroom.module';
+import { CoreModule } from '@core/core.module';
 
 @Module({
   imports: [
@@ -20,14 +14,8 @@ import { ClassroomModule } from './classroom/classroom.module';
       autoLoadEntities: true,
       synchronize: true,
     }),
-    UserModule,
-    GroupModule,
-    LessonModule,
-    ScheduleModule,
-    DepartmentModule,
-    NewsModule,
+    CoreModule,
     AuthModule,
-    ClassroomModule,
   ],
 })
 export class AppModule {}

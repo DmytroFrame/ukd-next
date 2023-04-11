@@ -8,6 +8,7 @@
     "target": "es2015",
     "paths": {
       "@common/*": ["apps/ukd-next--backend/src/app/common/*"],
+      "@core/*": ["apps/ukd-next--backend/src/app/core/*"],
       "@src/*": ["apps/ukd-next--backend/src/app/*"],
     }
   },
