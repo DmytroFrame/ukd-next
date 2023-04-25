@@ -24,7 +24,8 @@
       "executor": "@nrwl/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "ukd-next--app:build"
+        "buildTarget": "ukd-next--app:build",
+        "proxyConfig": "apps/ukd-next--app/proxy.conf.json"
       },
       "configurations": {
         "development": {

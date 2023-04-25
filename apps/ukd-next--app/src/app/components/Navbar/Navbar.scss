@@ -1,0 +1,43 @@
+.navbar_container {
+  width: 100%;
+  background-color: white;
+  height: 75px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px -1px 10px 0px #0000001a;
+
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.navbar_icon_base {
+  border-radius: 50%;
+  margin-top: -30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0px -10px 20px rgb(0 0 0 / 15%);
+  transition: all 0.06s linear;
+}
+
+.navbar_icon {
+  height: 69px;
+  width: 69px;
+  background-color: #730909;
+}
+
+.navbar_icon_active {
+  height: 80px;
+  width: 80px;
+  background-color: #a61b34;
+
+  //   &:active {
+  //     background-color: #d73251;
+  //   }
+}

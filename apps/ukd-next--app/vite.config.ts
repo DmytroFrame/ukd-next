@@ -6,6 +6,8 @@ import viteTsConfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   cacheDir: '../../node_modules/.vite/ukd-next--app',
 
+  base: '/app',
+
   server: {
     port: 4200,
     host: 'localhost',
