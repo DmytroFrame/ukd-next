@@ -23,29 +23,29 @@ export class ScheduleEntity {
 
   @ApiProperty({ type: () => LessonEntity })
   @ManyToOne(() => LessonEntity, (lessson) => lessson.schedules)
-  @JoinColumn({name: 'lesssonId'})
+  @JoinColumn({ name: 'lesssonId' })
   lessson?: LessonEntity;
 
-  @Column({select: false})
-  lesssonId!: string
+  @Column({ select: false })
+  lesssonId!: string;
 
-  @ApiProperty({ type:() => UserEntity })
+  @ApiProperty({ type: () => UserEntity })
   @ManyToOne(() => UserEntity, (user) => user.schedules)
-  @JoinColumn({name: 'teacherId'})
+  @JoinColumn({ name: 'teacherId' })
   teacher?: UserEntity;
 
-  @Column({select: false})
-  teacherId!: string
+  @Column({ select: false })
+  teacherId!: string;
 
-  @ApiProperty({ type:() => ClassroomEntity })
+  @ApiProperty({ type: () => ClassroomEntity })
   @ManyToOne(() => ClassroomEntity, (classroom) => classroom.schedules)
-  @JoinColumn({name: 'classroomId'})
+  @JoinColumn({ name: 'classroomId' })
   classroom?: ClassroomEntity;
 
-  @Column({select: false})
-  classroomId!: string
+  @Column({ select: false })
+  classroomId!: string;
 
-  @ApiProperty({ type:() => GroupEntity, isArray: true })
+  @ApiProperty({ type: () => GroupEntity, isArray: true })
   @ManyToMany(() => GroupEntity, (group) => group.schedules)
   groups?: GroupEntity[];
 

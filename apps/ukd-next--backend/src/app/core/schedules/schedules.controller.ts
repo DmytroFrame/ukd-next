@@ -10,19 +10,19 @@ import { ScheduleEntity } from './entities/schedule.entity';
 export class SchedulesController {
   constructor(private readonly schedulesService: SchedulesService) {}
 
-  @ApiCreatedResponse({type: ScheduleEntity})
+  @ApiCreatedResponse({ type: ScheduleEntity })
   @Post()
   create(@Body() createScheduleDto: CreateScheduleDto) {
     return this.schedulesService.create(createScheduleDto);
   }
 
-  @ApiOkResponse({type: ScheduleEntity, isArray: true})
+  @ApiOkResponse({ type: ScheduleEntity, isArray: true })
   @Get()
   findAll() {
     return this.schedulesService.findAll();
   }
 
-  @ApiOkResponse({type: ScheduleEntity})
+  @ApiOkResponse({ type: ScheduleEntity })
   @Get(':id')
   findOne(@Param('id', ParseUUIDPipe) id: string) {
     return this.schedulesService.findOne(id);

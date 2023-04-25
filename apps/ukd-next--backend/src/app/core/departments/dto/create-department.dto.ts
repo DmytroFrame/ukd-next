@@ -7,7 +7,7 @@ export class CreateDepartmentDto {
   @IsString()
   name: string;
 
-  @ApiProperty({example: fakeRandomUuid()})
+  @ApiProperty({ example: fakeRandomUuid() })
   @IsUUID()
   headOfDepartmentId: string;
 }

@@ -11,24 +11,24 @@ export class SchedulesService {
     @InjectRepository(ScheduleEntity)
     private readonly scheduleRepository: Repository<ScheduleEntity>
   ) {}
-  
+
   create(createScheduleDto: CreateScheduleDto) {
-    return this.scheduleRepository.save(createScheduleDto)
+    return this.scheduleRepository.save(createScheduleDto);
   }
 
   findAll() {
-    return this.scheduleRepository.find()
+    return this.scheduleRepository.find();
   }
 
   findOne(id: string) {
-    return this.scheduleRepository.findOneBy({id})
+    return this.scheduleRepository.findOneBy({ id });
   }
 
   update(id: string, updateScheduleDto: UpdateScheduleDto) {
-    return this.scheduleRepository.update(id, updateScheduleDto)
+    return this.scheduleRepository.update(id, updateScheduleDto);
   }
 
   remove(id: string) {
-    return this.scheduleRepository.delete(id)
+    return this.scheduleRepository.delete(id);
   }
 }

@@ -24,7 +24,7 @@ export class DepartmentEntity {
   @Column()
   name: string;
 
-  @Column({select: false})
+  @Column({ select: false })
   headOfDepartmentId!: string;
 
   @ApiProperty({ type: () => UserEntity })

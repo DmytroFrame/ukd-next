@@ -13,33 +13,24 @@ import { TypeORMError } from 'typeorm';
 
 @Catch(TypeORMError)
 export class TypeOrmFilter implements ExceptionFilter {
-    catch(exception: TypeORMError, host: ArgumentsHost) {
-        const response = host.switchToHttp().getResponse();
-        const customResponse = {
-            status: 500,
-            message:exception.message,
-            timestamp: new Date().toISOString(),
-        };
-        response.status(customResponse.status).json(customResponse);
-    }
+  catch(exception: TypeORMError, host: ArgumentsHost) {
+    const response = host.switchToHttp().getResponse();
+    const customResponse = {
+      status: 500,
+      message: exception.message,
+      timestamp: new Date().toISOString(),
+    };
+    response.status(customResponse.status).json(customResponse);
+  }
 }
 
-
 @Module({
-  imports: [
-    UsersModule,
-    GroupsModule,
-    DepartmentsModule,
-    ClassroomsModule,
-    LessonsModule,
-    SchedulesModule,
-    NewsModule,
-  ],
+  imports: [UsersModule, GroupsModule, DepartmentsModule, ClassroomsModule, LessonsModule, SchedulesModule, NewsModule],
   providers: [
     {
       provide: APP_FILTER,
       useClass: TypeOrmFilter,
-    }
-  ]
+    },
+  ],
 })
 export class CoreModule {}

@@ -8,11 +8,11 @@ export class CreateLessonDto {
   @IsString()
   name!: string;
 
-  @ApiProperty({example: fakeRandomUuid()})
+  @ApiProperty({ example: fakeRandomUuid() })
   @IsUUID()
   teacherId!: string;
 
-  @ApiProperty({example: fakeRandomUuid()})
+  @ApiProperty({ example: fakeRandomUuid() })
   @IsUUID()
   departmentId!: string;
 

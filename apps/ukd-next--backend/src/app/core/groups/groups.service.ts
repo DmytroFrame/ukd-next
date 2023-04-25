@@ -17,7 +17,7 @@ export class GroupsService {
   }
 
   findAll() {
-    return this.groupRepository.find({relations: ['students']});
+    return this.groupRepository.find({ relations: ['students'] });
   }
 
   findOne(id: string) {

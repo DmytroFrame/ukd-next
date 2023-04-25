@@ -34,7 +34,7 @@ export class NewsEntity {
   @JoinColumn({ name: 'authorId' })
   author?: UserEntity;
 
-  @Column({select: false})
+  @Column({ select: false })
   authorId!: string;
 
   @CreateDateColumn()

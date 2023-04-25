@@ -9,7 +9,7 @@
     "paths": {
       "@common/*": ["apps/ukd-next--backend/src/app/common/*"],
       "@core/*": ["apps/ukd-next--backend/src/app/core/*"],
-      "@src/*": ["apps/ukd-next--backend/src/app/*"],
+      "@src/*": ["apps/ukd-next--backend/src/app/*"]
     }
   },
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],

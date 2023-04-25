@@ -1,4 +1,4 @@
 export interface IRequirements {
-    projector?: boolean,
-    computers?: boolean,
+  projector?: boolean;
+  computers?: boolean;
 }
