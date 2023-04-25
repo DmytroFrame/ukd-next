@@ -1,4 +1,4 @@
-export interface IClassroomFeatures {
+export interface IRequirements {
     projector?: boolean,
     computers?: boolean,
 }

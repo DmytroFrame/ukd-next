@@ -1,28 +1,44 @@
-import { Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { UserRole } from '../enums/user-role.enum';
 import { GroupEntity } from '@core/groups/entities/group.entity';
 import { ScheduleEntity } from '@core/schedules/entities/schedule.entity';
+import { ApiProperty } from '@nestjs/swagger';
+import { fakeRandomUuid } from '@common/functions';
 
 @Entity('users')
 export class UserEntity {
+  @ApiProperty({ example: fakeRandomUuid() })
   @PrimaryGeneratedColumn('uuid')
   id?: string;
 
+  @ApiProperty({ default: '' })
   @Column({ default: '' })
-  fullname: string;
+  fullname?: string;
 
+  @ApiProperty()
   @Column()
   email: string;
 
-  @Column()
+  @Column({ select: false })
   password: string;
 
-  @Column({ type: 'enum', enum: UserRole, array: true })
-  roles: UserRole[];
+  @ApiProperty({ enum: UserRole, isArray: true, default: [UserRole.Student] })
+  @Column({ type: 'enum', enum: UserRole, array: true, default: [UserRole.Student] })
+  roles?: UserRole[];
 
+  @ApiProperty()
   @CreateDateColumn()
   createdAt?: Date;
 
+  @ApiProperty()
   @UpdateDateColumn()
   updatedAt?: Date;
 

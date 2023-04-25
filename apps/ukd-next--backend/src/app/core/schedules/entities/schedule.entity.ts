@@ -1,3 +1,4 @@
+import { fakeRandomUuid } from '@common/functions';
 import { ClassroomEntity } from '@core/classrooms/entities/classroom.entity';
 import { GroupEntity } from '@core/groups/entities/group.entity';
 import { LessonEntity } from '@core/lessons/entities/lesson.entity';
@@ -7,6 +8,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
   ManyToMany,
   ManyToOne,
   PrimaryGeneratedColumn,
@@ -15,31 +17,45 @@ import {
 
 @Entity('schedule')
 export class ScheduleEntity {
+  @ApiProperty({ example: fakeRandomUuid() })
   @PrimaryGeneratedColumn('uuid')
   id?: string;
 
-  @ApiProperty()
+  @ApiProperty({ type: () => LessonEntity })
   @ManyToOne(() => LessonEntity, (lessson) => lessson.schedules)
-  lessson: LessonEntity;
+  @JoinColumn({name: 'lesssonId'})
+  lessson?: LessonEntity;
 
-  @ApiProperty()
+  @Column({select: false})
+  lesssonId!: string
+
+  @ApiProperty({ type:() => UserEntity })
   @ManyToOne(() => UserEntity, (user) => user.schedules)
-  teacher: UserEntity;
+  @JoinColumn({name: 'teacherId'})
+  teacher?: UserEntity;
 
-  @ApiProperty()
+  @Column({select: false})
+  teacherId!: string
+
+  @ApiProperty({ type:() => ClassroomEntity })
   @ManyToOne(() => ClassroomEntity, (classroom) => classroom.schedules)
-  classroom: ClassroomEntity;
+  @JoinColumn({name: 'classroomId'})
+  classroom?: ClassroomEntity;
 
+  @Column({select: false})
+  classroomId!: string
+
+  @ApiProperty({ type:() => GroupEntity, isArray: true })
   @ManyToMany(() => GroupEntity, (group) => group.schedules)
-  groups: GroupEntity[];
+  groups?: GroupEntity[];
 
   @ApiProperty()
   @Column()
-  startAt: Date;
+  startAt!: Date;
 
   @ApiProperty()
   @Column()
-  endAt: Date;
+  endAt!: Date;
 
   @CreateDateColumn()
   createdAt?: Date;

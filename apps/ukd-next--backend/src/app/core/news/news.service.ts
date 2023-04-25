@@ -17,11 +17,11 @@ export class NewsService {
   }
 
   findAll() {
-    return this.newsRepository.find({ order: { createdAt: 'DESC' } });
+    return this.newsRepository.find({ relations: ['author'], order: { createdAt: 'DESC' } });
   }
 
   findOne(id: string) {
-    return this.newsRepository.findOneBy({ id });
+    return this.newsRepository.findOne({ relations: ['author'], where: { id } });
   }
 
   update(id: string, updateNewsDto: UpdateNewsDto) {
