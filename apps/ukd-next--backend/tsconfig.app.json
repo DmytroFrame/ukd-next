@@ -8,7 +8,8 @@
     "target": "es2015",
     "paths": {
       "@common/*": ["apps/ukd-next--backend/src/app/common/*"],
-      "@src/*": ["apps/ukd-next--backend/src/app/*"],
+      "@core/*": ["apps/ukd-next--backend/src/app/core/*"],
+      "@src/*": ["apps/ukd-next--backend/src/app/*"]
     }
   },
   "exclude": ["jest.config.ts", "src/**/*.spec.ts", "src/**/*.test.ts"],
