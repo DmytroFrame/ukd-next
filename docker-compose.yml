@@ -1,0 +1,43 @@
+version: '3'
+
+networks:
+  private-network:
+
+
+services:
+  database:
+    container_name: ukd-next--database
+    restart: always
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: ukd-next
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    volumes:
+      - ./storage:/var/lib/postgresql/data
+    networks:
+      - private-network
+
+  backend:
+    container_name: ukd-next--backend
+    restart: always
+    build:
+      context: .
+      dockerfile: apps/ukd-next--backend/Dockerfile
+    networks:
+      - private-network
+    depends_on:
+      - database
+
+  nginx:
+    container_name: ukd-next--nginx
+    restart: always
+    build:
+      context: .
+      dockerfile: apps/ukd-next--web/Dockerfile
+    ports:
+      - "80:80"
+    networks:
+      - private-network
+    depends_on:
+      - backend
