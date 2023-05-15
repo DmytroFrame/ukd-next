@@ -7,7 +7,7 @@ import { CoreModule } from '@core/core.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'database',
       username: 'postgres',
       password: 'root',
       database: 'ukd-next',
