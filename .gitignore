@@ -5,6 +5,7 @@ dist
 tmp
 /out-tsc
 /storage
+/portainer-data
 
 # dependencies
 node_modules
